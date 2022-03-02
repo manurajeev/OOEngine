@@ -255,8 +255,12 @@ footer ul a:hover {
   
   <!-- BUTTONS -->
   <div class= "buttons">  
-    <input type="submit" value="Search" id="google_search">
+   <input type="submit" value="Search" id="google_search">
+   {% comment %} <button type="button" id="google_search">
+   <a href="{% url 'OOEngine:search' %}">Search</a>
+  </button> {% endcomment %}
     {% comment %} <input type="submit" value="I'm Feeling Lucky" id="im_feeling_lucky"> {% endcomment %}
+  
   </div>
     
   <!-- FOOTER -->
