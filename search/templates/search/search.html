@@ -8,19 +8,6 @@
                 margin-left: 100px;
             }
 
-
-            li.nav-links a:hover {
-                text-decoration: underline;
-            }
-
-            #sign_in:hover {
-                box-shadow: 1px 1px 5px #999;
-            }
-
-            #sign_in {
-                color: #fff;
-            }
-
             /* GOOGLE AREA */
             .google #google_logo {
                 display: block;
@@ -58,42 +45,6 @@
                 margin-bottom: 300px;
             }
 
-            /* MEDIA QUERIES */
-
-            @media screen and (max-width: 400px) {
-
-                li.nav-links a {
-                    display: none;
-                }
-
-                #google_logo {
-                    padding: 0;
-                }
-
-                .buttons {
-                    display: none;
-                }
-            }
-
-            @media screen and (max-width: 565px) {
-
-                li.nav-links a {
-                    display: none;
-                }
-
-
-                #google_logo {
-                    padding: 0;
-                }
-
-                .buttons {
-                    display: none;
-                }
-
-                #form-search {
-                    width: 80%;
-                }
-            }
         </style>
     </head>
 
@@ -102,14 +53,14 @@
     <div class="search_tab">
         <!-- GOOGLE IMG -->
         <div class="google" style="float:left; margin-right:10px;">
-            <a href="#" class="container" id="google_logo"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/OI_Master_Icon_with_Grad_RGB.png" alt=" photo google-logo_zpspkcztsjo.png"/></a>
+            <a href="http://localhost:8000/home/" class="container" id="google_logo"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/OI_Master_Icon_with_Grad_RGB.png" alt=" photo google-logo_zpspkcztsjo.png"/></a>
         </div>
 
         <!--search bar-->
         <div class="form" style="float:left;">
             <form>
                 <label for="form-search"></label>
-                <input type="text" id="form-search" placeholder="Search or type URL">
+                <input type="text" id="form-search" value="{{search_input}}">
             </form>
 <!--            <button type="button" id="google_search">-->
 <!--                <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" />-->
@@ -121,21 +72,31 @@
 
     <!--search result-->
     <div id="result_list">
-            {% for item in movies %}
+        {% if data %}
+            {% for item in data %}
                 <div class="result_block">
                     <div class="title_class">
-                        <a href="item.url">
+                        <a href="item.data">
                             <br>
-                            <h3 class="title">{{item.title}}</h3>
+                            <h3 class="title">{{item.0}}</h3>
                         </a>
                     </div>
                     <div class="description_class">
                         <span>
-                            {{item.description}}
+                            {{item.1}}
                         </span>
                     </div>
                 </div>
             {% endfor %}
+        {% else %}
+            <div style="margin-top: 100px; margin-left: 100px;">
+                <span>
+                    <img style="width: 100px; height: 100px;" src="https://cdn-icons-png.flaticon.com/512/768/768031.png"/></a>
+                    <strong>No results found</strong>
+
+                </span>
+            </div>
+        {% endif %}
         </div>
     </body>
 </html>
