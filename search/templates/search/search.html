@@ -1,12 +1,164 @@
 <html>
     <head>
-        
+        <title>Search Result</title>
+        <style>
+            .result_block {
+                margin-top: 0;
+                margin-bottom: 30px;
+                margin-left: 100px;
+            }
+
+
+            li.nav-links a:hover {
+                text-decoration: underline;
+            }
+
+            #sign_in:hover {
+                box-shadow: 1px 1px 5px #999;
+            }
+
+            #sign_in {
+                color: #fff;
+            }
+
+            /* GOOGLE AREA */
+            .google #google_logo {
+                display: block;
+                margin: 0 auto;
+                clear: both;
+            }
+
+            .container {
+                width: 100px;
+            }
+
+            /* Resize images */
+            .container img {
+                width: 70%;
+                height: auto;
+            }
+
+            .form {
+                text-align: center;
+            }
+
+            #form-search {
+                width: 450px;
+                line-height: 32px;
+                padding: 20px 10px;
+            }
+
+            .form #form-search {
+                padding: 0 8px;
+            }
+
+            .buttons {
+                text-align: center;
+                padding-top: 30px;
+                margin-bottom: 300px;
+            }
+
+            /* MEDIA QUERIES */
+
+            @media screen and (max-width: 400px) {
+
+                li.nav-links a {
+                    display: none;
+                }
+
+                #google_logo {
+                    padding: 0;
+                }
+
+                .buttons {
+                    display: none;
+                }
+            }
+
+            @media screen and (max-width: 565px) {
+
+                li.nav-links a {
+                    display: none;
+                }
+
+
+                #google_logo {
+                    padding: 0;
+                }
+
+                .buttons {
+                    display: none;
+                }
+
+                #form-search {
+                    width: 80%;
+                }
+            }
+        </style>
     </head>
-<body>
-<ul>
-    {% for item in movies %}
-        <li>{{ item }}</li>
-    {% endfor %}
-</ul>
-</body>
+
+    <body>
+
+    <div class="search_tab">
+        <!-- GOOGLE IMG -->
+        <div class="google" style="float:left; margin-right:10px;">
+            <a href="#" class="container" id="google_logo"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/OI_Master_Icon_with_Grad_RGB.png" alt=" photo google-logo_zpspkcztsjo.png"/></a>
+        </div>
+
+        <!--search bar-->
+        <div class="form" style="float:left;">
+            <form>
+                <label for="form-search"></label>
+                <input type="text" id="form-search" placeholder="Search or type URL">
+            </form>
+<!--            <button type="button" id="google_search">-->
+<!--                <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" />-->
+<!--            </button>-->
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <!--search result-->
+    <div id="result_list">
+            {% for item in movies %}
+                <div class="result_block">
+                    <div class="title_class">
+                        <a href="item.url">
+                            <br>
+                            <h3 class="title">{{item.title}}</h3>
+                        </a>
+                    </div>
+                    <div class="description_class">
+                        <span>
+                            {{item.description}}
+                        </span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </body>
 </html>
+
+<!--https://developer.mozilla.org/ko/docs/Learn/Server-side/Django/Forms-->
+
+<!--<script language="JavaScript">-->
+<!--    for(int i=0; i<item.size(); i++){-->
+<!--        var movtag = '';-->
+<!--        movtag += '<div class="movie">' +-->
+<!--            '    <div class="title_class">' +-->
+<!--            '        <a href="' + item.url + '">' +-->
+<!--            '<br>' +-->
+<!--            '            <h3 class="title">' + item.title + '</h3>' +-->
+<!--            '</a>' +-->
+<!--            '    </div>' +-->
+<!--            '    <div class="description_class">' +-->
+<!--            '        <span>' +-->
+<!--            item.description +-->
+<!--            '        </span>' +-->
+<!--            '    </div>' +-->
+<!--            '</div>';-->
+
+<!--        document.write(movtag);-->
+<!--    }-->
+<!--</script>-->
