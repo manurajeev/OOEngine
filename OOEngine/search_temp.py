@@ -6,9 +6,12 @@ import nltk
 import string
 nltk.download('stopwords')
 from nltk.corpus import stopwords
+from pathlib import Path
 
+base_path = Path(__file__).parent
+csv_path = (base_path / "movies.csv").resolve()
+movies_file = open(csv_path, 'r', encoding='utf-8')
 
-movies_file = open('/Users/prasadshinde/Documents/My Repos/OOEngine/OOEngine/movies.csv', 'r', encoding='utf-8')
 MOVIES_LIMIT = 10000
 MOVIES_DATA = []
 MOVIES_KWIC_DATA = {}
