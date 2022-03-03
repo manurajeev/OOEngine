@@ -27,26 +27,20 @@ def read_from_csv():
         row = [row[0], row[3]]
         MOVIES_DATA.append(row)
         keywords = remove_stop_words(row[0] + ' ' + row[1]).split()
+
         for keyword in keywords:
             keyword = keyword.lower()
-            # print(keyword)
-            # print(MOVIES_KWIC_DATA)
-            # print(MOVIES_KWIC_DATA.get(keyword, []))
+
             if keyword not in MOVIES_KWIC_DATA:
                 MOVIES_KWIC_DATA[keyword] = []
-            MOVIES_KWIC_DATA[keyword].append(len(MOVIES_DATA) - 1)
-            # if len(MOVIES_KWIC_DATA[keyword]) > 1:
-            #     print(keyword)
-            #     print(MOVIES_KWIC_DATA[keyword])
-    
-    # print(MOVIES_KWIC_DATA)
-        
+            MOVIES_KWIC_DATA[keyword].append(len(MOVIES_DATA) - 1)        
 
 
 def remove_stop_words(query):
     query = query.translate(str.maketrans('', '', string.punctuation))
     query = query.split()
     res = []
+
     for word in query: 
         if word not in en_stops:
             res.append(word)
@@ -57,11 +51,13 @@ def search(query):
     query = query.lower()
     query = remove_stop_words(query).split()
     resIndices = []
+
     for word in query:
         if word in MOVIES_KWIC_DATA:
             resIndices += MOVIES_KWIC_DATA[word]
     resIndices = set(resIndices)
     response = []
+    
     for index in resIndices:
         response.append(MOVIES_DATA[index])
     
