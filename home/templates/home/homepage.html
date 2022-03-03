@@ -234,8 +234,6 @@ footer ul a:hover {
     <nav>
       <ul id="nav_bar">
         <li class="nav-links" id="gmail"><a href="#">Home</a></li>
-        {% comment %} <li class="nav-links"><a href="#">Images</a></li>
-        <li id="sign_in"><a href="#">Sign In</a></li> {% endcomment %}
       </ul>  
     </nav>  
   </header>  
@@ -245,23 +243,25 @@ footer ul a:hover {
     <a href="#" class="container" id="google_logo"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/OI_Master_Icon_with_Grad_RGB.png" alt=" photo google-logo_zpspkcztsjo.png"/></a>
   </div>
   
-  <!-- FORM SEARCH -->  
-  <div class="form">  
-    <form>
-      <label for="form-search"></label>
-      <input type="text" id="form-search" placeholder="Search or type URL">
-    </form>
-  </div>  
+  <!-- FORM SEARCH -->   
+  <form action="" method="POST">
+      {% comment %} <label for="form-search"></label>
+      <input type="text" id="form-search" placeholder="Search or type URL"> {% endcomment %}
+      {% csrf_token %}
+      {{ form.as_p }}
   
-  <!-- BUTTONS -->
-  <div class= "buttons">  
-   <input type="submit" value="Search" id="google_search">
+  <!-- BUTTONS --> 
+   <input type="submit" value="Search" name="Search" id="google_search">
    {% comment %} <button type="button" id="google_search">
    <a href="{% url 'OOEngine:search' %}">Search</a>
   </button> {% endcomment %}
     {% comment %} <input type="submit" value="I'm Feeling Lucky" id="im_feeling_lucky"> {% endcomment %}
   
-  </div>
+</form>
+
+{% if submitbutton == "Search" %} 
+<h1> Your search is {{ searchbox }}</h1>
+{% endif %}
     
   <!-- FOOTER -->
   {% comment %} <footer>
