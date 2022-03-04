@@ -1,279 +1,52 @@
+{% load static %}
 <head>
-  <title>Google Homepage</title>
+  <title>OOEngine Homepage</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <style>
-    /* BASIC STYLES */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto', sans-serif;
-}
-
-header {
-  width: 100%;
-}
-
-ul {
-  list-style: none;
-}
-
-/* NAV BAR */
-#nav_bar {
-  float: right;
-}
-
-#nav_bar li {
-  display: inline-block;
-  padding: 8px;
-}
-
-#nav_bar #sign_in {
-  background: #4887ef; 
-  margin-right: 25px;
-  padding: 7px 15px;
-  border-radius: 3px; 
-  font-weight: bold;
-}
-
-.nav-links {
-  color: #404040;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-li.nav-links a:hover {
-  text-decoration: underline;
-}
-
-#sign_in:hover { 
-  box-shadow: 1px 1px 5px #999;
-}
-
-#sign_in {
-  color: #fff;
-}
-
-/* GOOGLE AREA */
-.google #google_logo {
-  text-align: center;
-  display: block;
-  margin: 0 auto;
-  clear: both;
-  padding-top: 112px;
-  padding-bottom: 20px;
-}
-
-.container {
-  width: 200px;
-  height: 120px;
-}
-
-/* Resize images */
-.container img {
-  width: 100%;
-  height: auto;
-}
-
-.form {
-  text-align: center;
-}
-
-#form-search { 
-  width: 450px;
-  line-height: 32px;
-  padding: 20px 10px;
-}
-
-.form #form-search {
-  padding: 0 8px;
-}
-
-/*#form-search:hover {
-  border-color: #e4e4e4;
-  padding-top: 0;
-}*/
-
-.buttons {
-  text-align: center;
-  padding-top: 30px;
-  margin-bottom: 300px;
-}
-
-/* FOOTER */
-footer  {
-  background: #f2f2f2;
-  border-top: solid 2px #e4e4e4;
-/*   position: fixed; */
-  bottom: 0;
-  padding-bottom: 0;
-  width: 100%;
-  
-}
-
-footer ul li {
-  display: inline;
-  color: #666666;
-  font-size: 14px;
-  padding: 13px;
-}
-
-footer ul {
-  float: left;
-  padding: 1px;
-}
-
-footer ul a:hover {
-  text-decoration: underline;
-}
-
-.footer-right {
-  float: right;
-}
-
-/* MEDIA QUERIES */
-
-@media screen and (max-width: 400px) {
- 
- li.nav-links a {
-    display: none;
-  }
-  
- #google_logo {
-   padding: 0;
- }
-  
- .buttons {
-   display: none;
- }
-  
- #form-search {
-   width: 80%;
-
- }
-  
- footer {
-   bottom: 0;
- }
-  
- footer ul {
-   float: none;
-   padding-bottom: 2px;
-    
- }
-  
- .footer-left {
-   text-align: center;
-   margin: auto; 
-   padding-top: 10px;
-    
- }
-  
- .footer-right {
-   float: none;
-   text-align: center;
-   
- }
-}
-
-@media screen and (max-width: 565px) {
- 
-  li.nav-links a {
-    display: none;
-  }
-  
-  
- #google_logo {
-   padding: 0;
- }
-  
- .buttons {
-   display: none;
- }
-  
- #form-search {
-   width: 80%;
-
- }
-  
- footer {
-/*    bottom: 0;
-   postion: absolute; */
-   position:absolute;
-   bottom:0;
-   width:100%;
-   height:60px;
- }
-  
- footer ul {
-   float: none;
-   padding-bottom: 2px;
-    
- }
-  
- .footer-left {
-   text-align: center;
-   margin: auto; 
-   padding-top: 10px;
-    
- }
-  
- .footer-right {
-   float: none;
-   text-align: center;
-   
- }
-}
-  </style>
+  <link rel="stylesheet" href="{% static 'css/home.css' %}" />
 </head>
 
 <body>
   <header>
-    <nav>
-      <ul id="nav_bar">
-        <li class="nav-links" id="gmail"><a href="#">Home</a></li>
-      </ul>  
-    </nav>  
+    <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #e3f2fd;">
+      <div class="container-fluid ">
+      
+      
+      <a class="navbar-brand" href="#"><img src="{% static 'img/OOAD.png'%}" class="img-responsive"></a>
+
+    </div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+			<li class="nav-item">
+			  <a class="nav-link" aria-current="page" href="https://github.com/manurajeev/OOEngine">About</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="https://personal.utdallas.edu/~arush.sharma/">Team</a>
+			</li>			
+		  </ul>
+    </div>
+  </div>	  
+    </nav>
   </header>  
   
-  <!-- GOOGLE IMG -->  
-  <div class="google">
-    <a href="#" class="container" id="google_logo"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/OI_Master_Icon_with_Grad_RGB.png" alt=" photo google-logo_zpspkcztsjo.png"/></a>
+  <!-- Logo -->  
+  <div class="logo">
+    <img src="{% static 'img/logo.png'%}" alt=" photo"/>
   </div>
   
   <!-- FORM SEARCH -->   
   <form action="" method="POST">
-      {% comment %} <label for="form-search"></label>
-      <input type="text" id="form-search" placeholder="Search or type URL"> {% endcomment %}
+     <label for="form-search"></label>
       {% csrf_token %}
-      {{ form.as_p }}
-  
-  <!-- BUTTONS --> 
-   <input type="submit" value="Search" name="Search" id="google_search">
-   {% comment %} <button type="button" id="google_search">
-   <a href="{% url 'OOEngine:search' %}">Search</a>
-  </button> {% endcomment %}
-    {% comment %} <input type="submit" value="I'm Feeling Lucky" id="im_feeling_lucky"> {% endcomment %}
-  
+      <div class="form">
+        {{ form.as_p }}
+        <div class='search_btn'>
+          <input class="btn btn-primary btn-lg" type="submit" value="Search" name="Search" id="oo_search">
+          
+        </div>
+      <div>
 </form>
 
-{% if submitbutton == "Search" %} 
-<h1> Your search is {{ searchbox }}</h1>
-{% endif %}
-    
-  <!-- FOOTER -->
-  {% comment %} <footer>
-      <ul class="footer-left">
-        <li><a href="#">Advertising</a></li>
-        <li><a href="#">Business</a></li>
-        <li><a href="#">About</a></li> 
-      </ul>
-      <ul class="footer-right">    
-        <li><a href="#">Privacy</a></li>
-        <li><a href="#">Terms</a></li>
-        <li><a href="#">Settings</a></li>
-      </ul>       
-  </footer>       {% endcomment %}
 </body>
+
+{% comment %} <i class="material-icons">search</i> {% endcomment %}
