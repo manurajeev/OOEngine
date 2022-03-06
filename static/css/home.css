@@ -1,0 +1,60 @@
+.search_box {
+    width: 500px;
+    padding: 5px;
+    height: 40px;
+    position: relative;
+    outline: none;
+    border: 1px solid #cdcdcd;
+    border-color: rgba(0,0,0,.15);
+    background-color: white;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+.logo,.form{
+    text-align: center;
+}
+
+img {
+    max-height: 500px; 
+    max-width: 300px;
+}
+.home_logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  border: 3px solid green; 
+}
+
+#oo_search{
+    width: 150px;
+    height: 20px;
+    line-height: 0px;
+    padding: 20px 10px;
+}
+
+.navbar-brand {
+    position: relative;
+    width: 170px;
+    left: 15px;
+    background-size: contain;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #2C5499 !important;
+}
+
+.navbar-brand
+{
+    position: relative;
+    background: url(../images/logo.png);
+    width: 170px;
+    left: 15px;
+    max-height: 70px; /* height of the navbar */
+}
+
+.nav-link
+{
+    font-size: 20px;
+}
