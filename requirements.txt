@@ -1,8 +1,10 @@
 asgiref==3.5.0
 click==8.0.4
 Django==4.0.3
+gunicorn==20.1.0
 joblib==1.1.0
 nltk==3.7
 regex==2022.3.2
 sqlparse==0.4.2
 tqdm==4.63.0
+whitenoise==6.0.0
