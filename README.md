@@ -1,12 +1,9 @@
-# OOEngine
+# OOEngine [Try It](https://ooad-cyberminer.herokuapp.com/)
 
-Requirements/Libraries:
-- Python 3
-- Django
-- NLTK
 
 Steps to setup the project:
 - Clone the project
 - cd OOEngine
+- pip install -r requirements.txt
 - python manage.py runserver
-- Open the url
+- Open localhost url
