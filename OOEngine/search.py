@@ -56,7 +56,8 @@ def remove_stop_words(query):
     return ' '.join(res)
 
 
-# Use the same method for autofill
+# Method to search as well as autofill
+# Returns list of [imdbid, title, overview, tagline]
 def search(query):
     query = remove_stop_words(query)
     result = db.get_data(query)
