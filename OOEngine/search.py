@@ -64,6 +64,6 @@ def search(query):
     return result
 
 
-# read_from_csv()
+read_from_csv()
 # print(search("Love OR Part"))
 # print(remove_stop_words("Just When His World Is Back To Normal... He's In For The Surprise Of His Life!"))
