@@ -100,21 +100,21 @@
         {% endif %}
     </div>
 
-    <!-- 페이징처리 시작 -->
+    <!-- pagenation start -->
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.css.map' %}">
     <ul class="pagination justify-content-center">
-        <!-- 이전페이지 -->
+        <!-- prev page -->
         {% if data.has_previous %}
         <li class="page-item">
-            <a class="page-link" href="?page={{ data.previous_page_number }}">이전</a>
+            <a class="page-link" href="?page={{ data.previous_page_number }}">prev</a>
         </li>
         {% else %}
         <li class="page-item disabled">
-            <a class="page-link" tabindex="-1" aria-disabled="true" href="#">이전</a>
+            <a class="page-link" tabindex="-1" aria-disabled="true" href="#">prev</a>
         </li>
         {% endif %}
-        <!-- 페이지리스트 -->
+        <!-- page list -->
         {% for page_number in data.paginator.page_range %}
         {% if page_number >= data.number|add:-2 and page_number <= data.number|add:2 %}
         {% if page_number == data.number %}
@@ -128,18 +128,18 @@
         {% endif %}
         {% endif %}
         {% endfor %}
-        <!-- 다음페이지 -->
+        <!-- next page -->
         {% if data.has_next %}
         <li class="page-item">
-            <a class="page-link" href="?page={{ data.next_page_number }}">다음</a>
+            <a class="page-link" href="?page={{ data.next_page_number }}">next</a>
         </li>
         {% else %}
         <li class="page-item disabled">
-            <a class="page-link" tabindex="-1" aria-disabled="true" href="#">다음</a>
+            <a class="page-link" tabindex="-1" aria-disabled="true" href="#">next</a>
         </li>
         {% endif %}
     </ul>
-    <!-- 페이징처리 끝 -->
+    <!-- pagenation end -->
 
     </body>
 </html>
