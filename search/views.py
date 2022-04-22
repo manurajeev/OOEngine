@@ -2,11 +2,11 @@ from django.shortcuts import render
 from OOEngine import search_temp
 from django.core.paginator import Paginator
 
-# Create your views here.
 
 def search_view(request):
     search_input = request.session.get('searchbox')
     data = search_temp.search(search_input)
+
     print(data)
 
     page = request.GET.get('page', '1') #GET 방식으로 정보를 받아오는 데이터
