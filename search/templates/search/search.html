@@ -82,14 +82,15 @@
             {% for item in data %}
                 <div class="result_block">
                     <div class="title_class">
-                        <a href="item.data">
+<!--                        <span class="title">{{item.0}}</span>-->
+                        <a href="https://www.imdb.com/title/{{item.0}}">
                             <br>
-                            <h3 class="title">{{item.0}}</h3>
+                            <h3 class="title">{{item.1}}</h3>
                         </a>
                     </div>
                     <div class="description_class">
                         <span>
-                            {{item.1}}
+                            {{item.2}}
                         </span>
                     </div>
                 </div>
