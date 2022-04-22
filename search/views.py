@@ -14,3 +14,4 @@ def search_view(request):
 
     return render(request, 'search/search.html', context={'search_input':search_input, 'data':page_obj})
 
+
