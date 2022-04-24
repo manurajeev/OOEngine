@@ -4,7 +4,96 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+  {% comment %} <link rel="stylesheet" href="{% static 'css/home.css' %}" /> {% endcomment %}
+  <style>
+    nav{
+      display: flex;
+      position: fixed;
+      top:0;
+      width: 100%;
+      background-color: #e6f9ff;
+      overflow: auto;
+      height: 50px;
+   }
+   .left-links{
+      flex:1 1 200px;
+   }
+   .links {
+      display: inline-block;
+      text-align: center;
+      padding: 14px;
+      color: rgb(0, 0, 0);
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: bolder;
+   }
+   .links:hover {
+      border-bottom: 2px solid purple;
+   }
+   .selected{
+      border-bottom: 2px solid purple;
+   }
+  .logo,.form{
+      text-align: center;
+  }
+  
+  img {
+      max-height: 500px; 
+      max-width: 300px;
+  }
+  .home_logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    border: 3px solid green; 
+  }
+  
+  
+  .navbar-brand {
+      position: relative;
+      width: 170px;
+      left: 15px;
+      background-size: contain;
+  }
+  
+  .navbar-brand
+  {
+      position: relative;
+      background: url(../images/logo.png);
+      width: 170px;
+      left: 15px;
+      max-height: 70px;
+  }
+  
+  .nav-link
+  {
+      font-size: 20px;
+  }
+
+  .buttons {
+    padding: 10px 20px 10px 20px;
+    border-radius: 4px;
+    border: none;
+    width: 150px;
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: #2C5499;
+    font-weight: bolder;
+  }
+
+  #tags {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 550px;
+    border-radius: 50px;
+    height: 40px;
+    border: 1px solid #dddddd;
+    outline: none;
+    padding-left: 40px;
+  }
+  </style>
 </head>
 
 <body>
@@ -19,12 +108,12 @@
     });
   } );
     </script>
-  <header>
+  {% comment %} <header>
     <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #e3f2fd;">
       <div class="container-fluid ">
       
       
-      <a class="navbar-brand" href="#"><img src="{% static ''%}" class="img-responsive"></a>
+      <a class="navbar-brand" href="#"><img src="http://www.utdallas.edu/~mxk200102/OOAD.png" class="img-responsive"></a>
 
     </div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
     <ul class="navbar-nav">
@@ -38,11 +127,19 @@
     </div>
   </div>	  
     </nav>
-  </header>  
-  
+  </header>   {% endcomment %}
+  <nav>
+      <div class="left-links">
+        <a class="links" href="#">OOEngine</a>
+      </div>
+        <div class="right-links">
+        <a  class="links" href="https://github.com/manurajeev/OOEngine">About</a>
+        <a class="links"  href="https://personal.utdallas.edu/~arush.sharma/">Team</a>
+      </div>
+  </nav>
   <!-- Logo -->  
   <div class="logo">
-    <img src="{% static 'img/logo.png'%}" alt=" photo"/>
+    <img src="http://www.utdallas.edu/~mxk200102/logo.png" alt=" photo"/>
   </div>
   
   <!-- FORM SEARCH -->   
@@ -50,11 +147,13 @@
      <label for="form-search"></label>
       {% csrf_token %}
       <div class="form">
-        <label for="tags">Search: </label>
-        <input id="tags" type="text" name="search" maxlength="100" required>
+        {% comment %} <label for="tags">Search: </label> {% endcomment %}
+        {% comment %} <input id="tags" type="text" name="search" maxlength="100" required>
         <div class='search_btn'>
           <input class="btn btn-primary btn-lg" type="submit" value="Search" id="oo_search">
-        </div>
+        </div> {% endcomment %}
+        <input id="tags" type="text" type="text" name="search" maxlength="100" required/>
+        <input class="buttons" type="submit" value="Search">
       <div>
   </form>
 
